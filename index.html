@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="nl">
+    <head>        
+        <link rel="stylesheet" href="main.css">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
+        <meta charset="utf-8">
+        <title>Maak een afspraak</title>
+    </head>
+    <body>
+        <h1>Maak een afspraak</h1> 
+        <div class = "box">
+            <div class = "treatment">
+                <img src="icons/barber%20new.png" class="icon1">
+                <input type="image" src="/icons/specialist-user.png" class="icon2" id="heren1" alt="heren"/>
+                <input type="image" src="/icons/woman-avatar.png" class="icon3" id="dames1" alt="dames">
+                <input type="image" src="/icons/kids-couple.png" class="icon4" id="kinderen1" alt="kinderen">
+                <div id = "herenselect">
+                    <select>
+                        <option value="100" selected disabled>Zoek een behandeling</option>
+                        <option value="101">101 - wassen, knippen en stylen</option>
+                        <option value="102">102 - wassen, knippen en stylen</option>
+                        <option value="103">103 - wassen, knippen en stylen</option>
+                        <option value="104">104 - wassen, knippen en stylen</option>
+                        <option value="105">105 - wassen, knippen en stylen</option>
+                    </select>
+                </div>
+                <div id = "damesselect">
+                    <select>
+                        <option value="201"selected disabled>Dames</option>
+                        <option value="201">201 - wassen, knippen en stylen</option>
+                        <option value="202">202 - wassen, knippen en stylen</option>
+                        <option value="203">203 - wassen, knippen en stylen</option>
+                        <option value="204">204 - wassen, knippen en stylen</option>
+                        <option value="205">205 - wassen, knippen en stylen</option>
+                    </select>
+                </div>
+                <div id = "kinderenselect">
+                    <select>
+                        <option value="301"selected disabled>Kinderen</option>
+                        <option value="301">301 - wassen, knippen en stylen</option>
+                        <option value="302">302 - wassen, knippen en stylen</option>
+                        <option value="303">303 - wassen, knippen en stylen</option>
+                        <option value="304">304 - wassen, knippen en stylen</option>
+                        <option value="305">305 - wassen, knippen en stylen</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class = "preferencebarber">
+            <div id = "voorkeurskapper">
+                <select>
+                    <option value=e000 selected disabled>Voorkeurskapper</option>
+                    <option value=e001>Nienke Naar</option>
+                    <option value=e002>Maura Hamers</option>
+                    <option value=e003>Anthon Post</option>
+                    <option value=e004>Daan van Vliet</option>
+                    <option value=e005>Quincy de Jong</option>
+                    <option value=e005>Bor den Breejen</option>
+                    <option value=e006>Faris abu Watfa</option>
+                    <option value=e007>Obe Jansen</option>
+                </select>
+                <img src="icons/person%20new.png" class="icon9">
+                <img src="icons/left-arrow.png" class="icon6">    
+            </div>
+        </div>
+        <div class = "date_and_timebar">
+            <img src="icons/calendar%20new.png" class="icon8">
+            <input type="date" id = "datepicker">
+            <img src="icons/left-arrow.png" class="icon7">
+        </div>
+        
+        <button id="zoek_naar_mogelijkheden">Zoek naar mogelijkheden</button>
+        <script src="main.js"></script>
+    </body>
+
+</html>

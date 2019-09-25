@@ -1,0 +1,319 @@
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+body {
+    line-height:1;
+}
+
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section {
+    display:block;
+}
+
+nav ul {
+    list-style:none;
+}
+
+blockquote, q {
+    quotes:none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content:'';
+    content:none;
+}
+
+a {
+    margin:0;
+    padding:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+/* change colours to suit your needs */
+ins {
+    background-color:#ff9;
+    color:#000;
+    text-decoration:none;
+}
+
+/* change colours to suit your needs */
+mark {
+    background-color:#ff9;
+    color:#000;
+    font-style:italic;
+    font-weight:bold;
+}
+
+del {
+    text-decoration: line-through;
+}
+
+abbr[title], dfn[title] {
+    border-bottom:1px dotted;
+    cursor:help;
+}
+
+table {
+    border-collapse:collapse;
+    border-spacing:0;
+}
+
+/* change border colour to suit your needs */
+hr {
+    display:block;
+    height:1px;
+    border:0;  
+    border-top:1px solid #cccccc;
+    margin:1em 0;
+    padding:0;
+}
+
+input, select {
+    vertical-align:middle;
+}
+
+/* here starts the custompart of the css */
+body {
+    background-color: #008CFF;
+    margin: 0;
+    padding: 0;
+    
+}
+
+h1 {
+    text-align: center;
+    font-family: 'Montserrat', serif;
+    font-style: ExtraBold;
+    color: #FFFFFF;
+    font-size: 100px;
+    margin-top: 150px;   
+ 
+}
+
+.box {
+    position: relative;
+    width: 850px;
+    height: 700px;
+    margin: 100px auto;
+    background: #1AE2A4;
+    border-radius: 80px;    
+    
+}
+
+.treatment {
+    position: relative;
+    width: 750px;
+    height: 90px;
+    margin: auto;
+    background: #FFFFFF;
+    border-radius: 80px;  
+    top: 80px;
+ 
+}
+
+.icon1 {
+    position: relative;
+    left: 24px;
+    top: 15px;
+}
+
+
+.icon2 {
+    position: relative;
+    top: -8px;
+    left: 200px;
+  
+}
+
+.icon3 {
+    position: relative;
+    top: -8px;
+    left: 215px;
+    
+}
+
+.icon4 {
+    position: relative;
+    top: -8px;
+    left: 230px;    
+}
+
+.icon5 {
+    position: relative;
+    top: -30px;
+    left: 400px;     
+}
+
+.preferencebarber {
+    position: relative;
+    width: 750px;
+    height: 90px;
+    margin: auto;
+    background: #FFFFFF;
+    border-radius: 80px;  
+    top: -570px;
+}
+
+.icon6 {
+    position: relative;
+    top: -100px;
+    left: 590px;     
+}
+
+.icon7 {
+    position: relative;
+    top: -12px;
+    left: -25px;     
+    display: none;
+}
+
+.icon8 {
+    position: relative;
+    top: 5px;
+    left: 15px;     
+}
+
+.icon9 {
+    position: relative;
+    top: -90px;
+    left: 30px;
+}
+
+p {
+    text-align: center;
+    font-family: 'Montserrat', serif;
+    font-style: ExtraBold;
+    color: #FFFFFF;
+    font-size: 20px;
+}
+
+.date_and_timebar {
+    position: relative;
+    width: 750px;
+    height: 90px;
+    margin: auto;
+    background: #FFFFFF;
+    border-radius: 80px;  
+    top: -515px;
+}
+
+#herenselect select {
+    position: relative;
+    top: -59px;
+    left: 50%px;
+    font-family: 'Montserrat', serif;
+    width: 750px;
+    height: 90px;
+    border-radius: 80px;
+    font-size: 40px;
+    display: none;
+    border-color: #ffffff;
+    text-align-last: center;
+}
+
+#damesselect select {
+    position: relative;
+    top: -81px;
+    left: 50%px;
+    font-family: 'Montserrat', serif;
+    width: 750px;
+    height: 90px;
+    border-radius: 80px;
+    font-size: 40px;
+    display: none;
+    border-color: #ffffff;
+    text-align-last: center;
+}
+#kinderenselect select {
+    position: relative;
+    top: -82px;
+    left: 50%px;
+    font-family: 'Montserrat', serif;
+    width: 750px;
+    height: 90px;
+    border-radius: 80px;
+    font-size: 40px;
+    display: none;
+    border-color: #ffffff;
+    text-align-last: center;
+}
+
+.heren {
+    background-color: #ffffff;
+    opacity: 0;
+    height: 70px;
+    width: 70px;
+    position: relative;
+    top: -13px;
+    left: -80px;
+    border: 0;
+    
+    }
+
+#voorkeurskapper select {
+    position: relative;
+    top: 0px;
+    left: 50%px;
+    font-family: 'Montserrat', serif;
+    width: 750px;
+    height: 90px;
+    border-radius: 80px;
+    font-size: 40px;
+    display: initial;
+    border-color: #ffffff;
+    text-align-last: center;
+    font-weight: 800;
+}
+
+
+#datepicker {
+    height: 85px;
+    position: relative;
+    top: -28px;
+    left: 30px;
+    width: 590px;
+    font-size: 45px;
+    font-family: 'Montserrat', serif;
+    border: none;
+    text-align: center;
+    font-weight: 800;
+}
+
+#zoek_naar_mogelijkheden    {
+    position: relative;
+    width: 750px;
+    height: 90px;
+    margin: auto;
+    background: #F97070;
+    border-radius: 80px;  
+    top: -400px;
+    left: 575px;
+    border: none;
+    text-align: center;
+    font-family: 'Montserrat', serif;
+    font-weight: 800;
+    color: #FFFFFF;
+    font-size: 40px;
+}
+
