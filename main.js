@@ -1,3 +1,4 @@
+//0.02//
 var herenselect = document.getElementById("herenselect");
 var herenInput = document.getElementById("heren1");
 
