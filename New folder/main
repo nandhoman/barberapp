@@ -1,81 +1,231 @@
-if (doc.data().Index == "1" && doc.data().Sort == "Childs") {
-                document.getElementById("e301").innerHTML = Naam;
-                document.getElementById("e301").style.display = "block";
+db.collection("Treatment")
+    .get()
+    .then(function(querySnapshot) {
+        querySnapshot.forEach(function(doc) {
+            // doc.data() is never undefined for query doc snapshots
+            var Naam = doc.data().Name;
+            function tijdinminuten(x){
+                return x * 10;
             }
-            if (doc.data().Index == "2" && doc.data().Sort == "Childs") {
-                document.getElementById("e302").innerHTML = Naam;
-                document.getElementById("e302").style.display = "block";  
+
+            if (doc.data().Index == "1" && doc.data().Sort=="Men" && amenu == "1") {
+                document.getElementById("Behandeling").innerHTML = "Behandeling Heren - " + Naam;
+                document.getElementById("Duur").innerHTML = "Duur: " + tijdinminuten("tijd");
             }
-            if (doc.data().Index == "3" && doc.data().Sort == "Childs") {
-                document.getElementById("e303").innerHTML = Naam;
-                document.getElementById("e303").style.display = "block";
+            if (doc.data().Index == "2" && doc.data().Sort=="Men" && amenu == "2") {
+                document.getElementById("Behandeling").innerHTML = "Behandeling Heren - " + Naam;
+                document.getElementById("Duur").innerHTML = "Duur: " + tijdinminuten("tijd");
             }
-            if (doc.data().Index == "4" && doc.data().Sort == "Childs") {
-                document.getElementById("e304").innerHTML = Naam;
-                document.getElementById("e304").style.display = "block";
+            if (doc.data().Index == "3" && doc.data().Sort=="Men" && amenu == "3") {
+                document.getElementById("Behandeling").innerHTML = "Behandeling Heren - " + Naam;
+                document.getElementById("Duur").innerHTML = "Duur: " + tijdinminuten("tijd");
             }
-            if (doc.data().Index == "5" && doc.data().Sort == "Childs") {
-                document.getElementById("e305").innerHTML = Naam;
-                document.getElementById("e305").style.display = "block";  
+            if (doc.data().Index == "4" && doc.data().Sort=="Men" && amenu == "4") {
+                document.getElementById("Behandeling").innerHTML = "Behandeling Heren - " + Naam;
+                document.getElementById("Duur").innerHTML = "Duur: " + tijdinminuten("tijd");
             }
-            if (doc.data().Index == "6" && doc.data().Sort == "Childs") {
-                document.getElementById("e306").innerHTML = Naam;
-                document.getElementById("e306").style.display = "block";
+            if (doc.data().Index == "5" && doc.data().Sort=="Men" && amenu == "5") {
+                document.getElementById("Behandeling").innerHTML = "Behandeling Heren - " + Naam;
+                document.getElementById("Duur").innerHTML = "Duur: " + tijdinminuten("tijd");
             }
-            if (doc.data().Index == "7" && doc.data().Sort == "Childs") {
-                document.getElementById("e307").innerHTML = Naam;
-                document.getElementById("e307").style.display = "block";
+            if (doc.data().Index == "6" && doc.data().Sort=="Men" && amenu == "6") {
+                document.getElementById("Behandeling").innerHTML = "Behandeling Heren - " + Naam;
+                document.getElementById("Duur").innerHTML = "Duur: " + tijdinminuten("tijd");
             }
-            if (doc.data().Index == "8" && doc.data().Sort == "Childs") {
-                document.getElementById("e308").innerHTML = Naam;
-                document.getElementById("e308").style.display = "block";  
+            if (doc.data().Index == "7" && doc.data().Sort=="Men" && amenu == "7") {
+                document.getElementById("Behandeling").innerHTML = "Behandeling Heren - " + Naam;
+                document.getElementById("Duur").innerHTML = "Duur: " + tijdinminuten("tijd");
             }
-            if (doc.data().Index == "9" && doc.data().Sort == "Childs") {
-                document.getElementById("e309").innerHTML = Naam;
-                document.getElementById("e309").style.display = "block";
+            if (doc.data().Index == "8" && doc.data().Sort=="Men" && amenu == "8") {
+                document.getElementById("Behandeling").innerHTML = "Behandeling Heren - " + Naam;
+                document.getElementById("Duur").innerHTML = "Duur: " + tijdinminuten("tijd");
             }
-            if (doc.data().Index == "10" && doc.data().Sort == "Childs") {
-                document.getElementById("e310").innerHTML = Naam;
-                document.getElementById("e310").style.display = "block";
+            if (doc.data().Index == "9" && doc.data().Sort=="Men" && amenu == "9") {
+                document.getElementById("Behandeling").innerHTML = "Behandeling Heren - " + Naam;
+                document.getElementById("Duur").innerHTML = "Duur: " + tijdinminuten("tijd");
             }
-            if (doc.data().Index == "11" && doc.data().Sort == "Childs") {
-                document.getElementById("e311").innerHTML = Naam;
-                document.getElementById("e311").style.display = "block";  
+            if (doc.data().Index == "10" && doc.data().Sort=="Men" && amenu == "10") {
+                document.getElementById("Behandeling").innerHTML = "Behandeling Heren - " + Naam;
+                document.getElementById("Duur").innerHTML = "Duur: " + tijdinminuten("tijd");
             }
-            if (doc.data().Index == "12" && doc.data().Sort == "Childs") {
-                document.getElementById("e312").innerHTML = Naam;
-                document.getElementById("e312").style.display = "block";
+            if (doc.data().Index == "11" && doc.data().Sort=="Men" && amenu == "11") {
+                document.getElementById("Behandeling").innerHTML = "Behandeling Heren - " + Naam;
+                document.getElementById("Duur").innerHTML = "Duur: " + tijdinminuten("tijd");
             }
-            if (doc.data().Index == "13" && doc.data().Sort == "Childs") {
-                document.getElementById("e313").innerHTML = Naam;
-                document.getElementById("e313").style.display = "block";
+            if (doc.data().Index == "12" && doc.data().Sort=="Men" && amenu == "12") {
+                document.getElementById("Behandeling").innerHTML = "Behandeling Heren - " + Naam;
+                document.getElementById("Duur").innerHTML = "Duur: " + tijdinminuten("tijd");
             }
-            if (doc.data().Index == "14" && doc.data().Sort == "Childs") {
-                document.getElementById("e314").innerHTML = Naam;
-                document.getElementById("e314").style.display = "block";  
+            if (doc.data().Index == "13" && doc.data().Sort=="Men" && amenu == "13") {
+                document.getElementById("Behandeling").innerHTML = "Behandeling Heren - " + Naam;
+                document.getElementById("Duur").innerHTML = "Duur: " + tijdinminuten("tijd");
             }
-            if (doc.data().Index == "15" && doc.data().Sort == "Childs") {
-                document.getElementById("e315").innerHTML = Naam;
-                document.getElementById("e315").style.display = "block";
+            if (doc.data().Index == "14" && doc.data().Sort=="Men" && amenu == "14") {
+                document.getElementById("Behandeling").innerHTML = "Behandeling Heren - " + Naam;
+                document.getElementById("Duur").innerHTML = "Duur: " + tijdinminuten("tijd");
             }
-            if (doc.data().Index == "16" && doc.data().Sort == "Childs") {
-                document.getElementById("e316").innerHTML = Naam;
-                document.getElementById("e316").style.display = "block";
+            if (doc.data().Index == "15" && doc.data().Sort=="Men" && amenu == "15") {
+                document.getElementById("Behandeling").innerHTML = "Behandeling Heren - " + Naam;
+                document.getElementById("Duur").innerHTML = "Duur: " + tijdinminuten("tijd");
             }
-            if (doc.data().Index == "17" && doc.data().Sort == "Childs") {
-                document.getElementById("e317").innerHTML = Naam;
-                document.getElementById("e317").style.display = "block";  
+            if (doc.data().Index == "16" && doc.data().Sort=="Men" && amenu == "16") {
+                document.getElementById("Behandeling").innerHTML = "Behandeling Heren - " + Naam;
+                document.getElementById("Duur").innerHTML = "Duur: " + tijdinminuten("tijd");
             }
-            if (doc.data().Index == "18" && doc.data().Sort == "Childs") {
-                document.getElementById("e318").innerHTML = Naam;
-                document.getElementById("e318").style.display = "block";
+            if (doc.data().Index == "17" && doc.data().Sort=="Men" && amenu == "17") {
+                document.getElementById("Behandeling").innerHTML = "Behandeling Heren - " + Naam;
+                document.getElementById("Duur").innerHTML = "Duur: " + tijdinminuten("tijd");
             }
-            if (doc.data().Index == "19" && doc.data().Sort == "Childs") {
-                document.getElementById("e319").innerHTML = Naam;
-                document.getElementById("e319").style.display = "block";  
+            if (doc.data().Index == "18" && doc.data().Sort=="Men" && amenu == "18") {
+                document.getElementById("Behandeling").innerHTML = "Behandeling Heren - " + Naam;
+                document.getElementById("Duur").innerHTML = "Duur: " + tijdinminuten("tijd");
             }
-            if (doc.data().Index == "20" && doc.data().Sort == "Childs") {
-                document.getElementById("e320").innerHTML = Naam;
-                document.getElementById("e320").style.display = "block";
+            if (doc.data().Index == "1" && doc.data().Sort=="Women" && amenu == "1") {
+                document.getElementById("Behandeling").innerHTML = "Behandeling Dames - " + Naam;
+                document.getElementById("Duur").innerHTML = "Duur: " + tijdinminuten("tijd");
             }
-            
+            if (doc.data().Index == "2" && doc.data().Sort=="Women" && amenu == "2") {
+                document.getElementById("Behandeling").innerHTML = "Behandeling Dames - " + Naam;
+                document.getElementById("Duur").innerHTML = "Duur: " + tijdinminuten("tijd");
+            }
+            if (doc.data().Index == "3" && doc.data().Sort=="Women" && amenu == "3") {
+                document.getElementById("Behandeling").innerHTML = "Behandeling Dames - " + Naam;
+                document.getElementById("Duur").innerHTML = "Duur: " + tijdinminuten("tijd");
+            }
+            if (doc.data().Index == "4" && doc.data().Sort=="Women" && amenu == "4") {
+                document.getElementById("Behandeling").innerHTML = "Behandeling Dames - " + Naam;
+                document.getElementById("Duur").innerHTML = "Duur: " + tijdinminuten("tijd");
+            }
+            if (doc.data().Index == "5" && doc.data().Sort=="Women" && amenu == "5") {
+                document.getElementById("Behandeling").innerHTML = "Behandeling Dames - " + Naam;
+                document.getElementById("Duur").innerHTML = "Duur: " + tijdinminuten("tijd");
+            }
+            if (doc.data().Index == "6" && doc.data().Sort=="Women" && amenu == "6") {
+                document.getElementById("Behandeling").innerHTML = "Behandeling Dames - " + Naam;
+                document.getElementById("Duur").innerHTML = "Duur: " + tijdinminuten("tijd");
+            }
+            if (doc.data().Index == "7" && doc.data().Sort=="Women" && amenu == "7") {
+                document.getElementById("Behandeling").innerHTML = "Behandeling Dames - " + Naam;
+                document.getElementById("Duur").innerHTML = "Duur: " + tijdinminuten("tijd");
+            }
+            if (doc.data().Index == "8" && doc.data().Sort=="Women" && amenu == "8") {
+                document.getElementById("Behandeling").innerHTML = "Behandeling Dames - " + Naam;
+                document.getElementById("Duur").innerHTML = "Duur: " + tijdinminuten("tijd");
+            }
+            if (doc.data().Index == "9" && doc.data().Sort=="Women" && amenu == "9") {
+                document.getElementById("Behandeling").innerHTML = "Behandeling Dames - " + Naam;
+                document.getElementById("Duur").innerHTML = "Duur: " + tijdinminuten("tijd");
+            }
+            if (doc.data().Index == "10" && doc.data().Sort=="Women" && amenu == "10") {
+                document.getElementById("Behandeling").innerHTML = "Behandeling Dames - " + Naam;
+                document.getElementById("Duur").innerHTML = "Duur: " + tijdinminuten("tijd");
+            }
+            if (doc.data().Index == "11" && doc.data().Sort=="Women" && amenu == "11") {
+                document.getElementById("Behandeling").innerHTML = "Behandeling Dames - " + Naam;
+                document.getElementById("Duur").innerHTML = "Duur: " + tijdinminuten("tijd");
+            }
+            if (doc.data().Index == "12" && doc.data().Sort=="Women" && amenu == "12") {
+                document.getElementById("Behandeling").innerHTML = "Behandeling Dames - " + Naam;
+                document.getElementById("Duur").innerHTML = "Duur: " + tijdinminuten("tijd");
+            }
+            if (doc.data().Index == "13" && doc.data().Sort=="Women" && amenu == "13") {
+                document.getElementById("Behandeling").innerHTML = "Behandeling Dames - " + Naam;
+                document.getElementById("Duur").innerHTML = "Duur: " + tijdinminuten("tijd");
+            }
+            if (doc.data().Index == "14" && doc.data().Sort=="Women" && amenu == "14") {
+                document.getElementById("Behandeling").innerHTML = "Behandeling Dames - " + Naam;
+                document.getElementById("Duur").innerHTML = "Duur: " + tijdinminuten("tijd");
+            }
+            if (doc.data().Index == "15" && doc.data().Sort=="Women" && amenu == "15") {
+                document.getElementById("Behandeling").innerHTML = "Behandeling Dames - " + Naam;
+                document.getElementById("Duur").innerHTML = "Duur: " + tijdinminuten("tijd");
+            }
+            if (doc.data().Index == "16" && doc.data().Sort=="Women" && amenu == "16") {
+                document.getElementById("Behandeling").innerHTML = "Behandeling Dames - " + Naam;
+                document.getElementById("Duur").innerHTML = "Duur: " + tijdinminuten("tijd");
+            }
+            if (doc.data().Index == "17" && doc.data().Sort=="Women" && amenu == "17") {
+                document.getElementById("Behandeling").innerHTML = "Behandeling Dames - " + Naam;
+                document.getElementById("Duur").innerHTML = "Duur: " + tijdinminuten("tijd");
+            }
+            if (doc.data().Index == "18" && doc.data().Sort=="Women" && amenu == "18") {
+                document.getElementById("Behandeling").innerHTML = "Behandeling Dames - " + Naam;
+                document.getElementById("Duur").innerHTML = "Duur: " + tijdinminuten("tijd");
+            }
+            if (doc.data().Index == "1" && doc.data().Sort=="Childs" && amenu == "1") {
+                document.getElementById("Behandeling").innerHTML = "Behandeling Kinderen - " + Naam;
+                document.getElementById("Duur").innerHTML = "Duur: " + tijdinminuten("tijd");
+            }
+            if (doc.data().Index == "2" && doc.data().Sort=="Childs" && amenu == "2") {
+                document.getElementById("Behandeling").innerHTML = "Behandeling Kinderen - " + Naam;
+                document.getElementById("Duur").innerHTML = "Duur: " + tijdinminuten("tijd");
+            }
+            if (doc.data().Index == "3" && doc.data().Sort=="Childs" && amenu == "3") {
+                document.getElementById("Behandeling").innerHTML = "Behandeling Kinderen - " + Naam;
+                document.getElementById("Duur").innerHTML = "Duur: " + tijdinminuten("tijd");
+            }
+            if (doc.data().Index == "4" && doc.data().Sort=="Childs" && amenu == "4") {
+                document.getElementById("Behandeling").innerHTML = "Behandeling Kinderen - " + Naam;
+                document.getElementById("Duur").innerHTML = "Duur: " + tijdinminuten("tijd");
+            }
+            if (doc.data().Index == "5" && doc.data().Sort=="Childs" && amenu == "5") {
+                document.getElementById("Behandeling").innerHTML = "Behandeling Kinderen - " + Naam;
+                document.getElementById("Duur").innerHTML = "Duur: " + tijdinminuten("tijd");
+            }
+            if (doc.data().Index == "6" && doc.data().Sort=="Childs" && amenu == "6") {
+                document.getElementById("Behandeling").innerHTML = "Behandeling Kinderen - " + Naam;
+                document.getElementById("Duur").innerHTML = "Duur: " + tijdinminuten("tijd");
+            }
+            if (doc.data().Index == "7" && doc.data().Sort=="Childs" && amenu == "7") {
+                document.getElementById("Behandeling").innerHTML = "Behandeling Kinderen - " + Naam;
+                document.getElementById("Duur").innerHTML = "Duur: " + tijdinminuten("tijd");
+            }
+            if (doc.data().Index == "8" && doc.data().Sort=="Childs" && amenu == "8") {
+                document.getElementById("Behandeling").innerHTML = "Behandeling Kinderen - " + Naam;
+                document.getElementById("Duur").innerHTML = "Duur: " + tijdinminuten("tijd");
+            }
+            if (doc.data().Index == "9" && doc.data().Sort=="Childs" && amenu == "9") {
+                document.getElementById("Behandeling").innerHTML = "Behandeling Kinderen - " + Naam;
+                document.getElementById("Duur").innerHTML = "Duur: " + tijdinminuten("tijd");
+            }
+            if (doc.data().Index == "10" && doc.data().Sort=="Childs" && amenu == "10") {
+                document.getElementById("Behandeling").innerHTML = "Behandeling Kinderen - " + Naam;
+                document.getElementById("Duur").innerHTML = "Duur: " + tijdinminuten("tijd");
+            }
+            if (doc.data().Index == "11" && doc.data().Sort=="Childs" && amenu == "11") {
+                document.getElementById("Behandeling").innerHTML = "Behandeling Kinderen - " + Naam;
+                document.getElementById("Duur").innerHTML = "Duur: " + tijdinminuten("tijd");
+            }
+            if (doc.data().Index == "12" && doc.data().Sort=="Childs" && amenu == "12") {
+                document.getElementById("Behandeling").innerHTML = "Behandeling Kinderen - " + Naam;
+                document.getElementById("Duur").innerHTML = "Duur: " + tijdinminuten("tijd");
+            }
+            if (doc.data().Index == "13" && doc.data().Sort=="Childs" && amenu == "13") {
+                document.getElementById("Behandeling").innerHTML = "Behandeling Kinderen - " + Naam;
+                document.getElementById("Duur").innerHTML = "Duur: " + tijdinminuten("tijd");
+            }
+            if (doc.data().Index == "14" && doc.data().Sort=="Childs" && amenu == "14") {
+                document.getElementById("Behandeling").innerHTML = "Behandeling Kinderen - " + Naam;
+                document.getElementById("Duur").innerHTML = "Duur: " + tijdinminuten("tijd");
+            }
+            if (doc.data().Index == "15" && doc.data().Sort=="Childs" && amenu == "15") {
+                document.getElementById("Behandeling").innerHTML = "Behandeling Kinderen - " + Naam;
+                document.getElementById("Duur").innerHTML = "Duur: " + tijdinminuten("tijd");
+            }
+            if (doc.data().Index == "16" && doc.data().Sort=="Childs" && amenu == "16") {
+                document.getElementById("Behandeling").innerHTML = "Behandeling Kinderen - " + Naam;
+                document.getElementById("Duur").innerHTML = "Duur: " + tijdinminuten("tijd");
+            }
+            if (doc.data().Index == "17" && doc.data().Sort=="Childs" && amenu == "17") {
+                document.getElementById("Behandeling").innerHTML = "Behandeling Kinderen - " + Naam;
+                document.getElementById("Duur").innerHTML = "Duur: " + tijdinminuten("tijd");
+            }
+            if (doc.data().Index == "18" && doc.data().Sort=="Childs" && amenu == "18") {
+                document.getElementById("Behandeling").innerHTML = "Behandeling Kinderen - " + Naam;
+                document.getElementById("Duur").innerHTML = "Duur: " + tijdinminuten("tijd");
+            }
+        });
+    })
+    .catch(function(error) {
+        console.log("Error getting documents: ", error);
+    });

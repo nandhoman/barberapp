@@ -331,45 +331,34 @@ p {
 
 #dbheren *{
     font-family: 'Montserrat', serif;
-    font-size: 10px;
+    font-size: 20px;
     font-weight: 800;
     text-align-last: center;
 }
 
 #dbdames *{
     font-family: 'Montserrat', serif;
-    font-size: 10px;
+    font-size: 20px;
     font-weight: 800;
     text-align-last: center;
 }
 
 #dbkinderen *{
     font-family: 'Montserrat', serif;
-    font-size: 10px;
+    font-size: 20px;
     font-weight: 800;
     text-align-last: center;
 }
 
 #voorkeurskapper1 *{
     font-family: 'Montserrat', serif;
-    font-size: 10px;
+    font-size: 20px;
     font-weight: 800;
     text-align-last: center;
 }
 
 select::-ms-expand {
     display: none;
-}
-
-#damesselect:after {
-    content: '<>';
-    font: 17px "Consolas", monospace;
-    color: #333;
-    -webkit-transform: rotate(90deg);
-    -moz-transform: rotate(90deg);
-    -ms-transform: rotate(90deg);
-    transform: rotate(90deg);
-    right: 11px;
 }
 
 #ekapper1 {

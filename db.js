@@ -35,6 +35,8 @@ function getValue(docRef) {
     window.location.href = '/choose';
 }
 
+
+
 db.collection("Kappers")
     .get()
     .then(function(querySnapshot) {
@@ -42,79 +44,17 @@ db.collection("Kappers")
             // doc.data() is never undefined for query doc snapshots
             console.log(doc.data().Index, doc.id, " => ", doc.data());
             var Naam = doc.data().Name;
-            if (doc.data().Index == "1") {
-                document.getElementById("ekapper1").innerHTML = Naam;
-                document.getElementById("ekapper1").style.display = "block";
+            var element = "ekapper" + doc.data().Index;
+            var i = 1;
+            while(i < 21){
+                stringi = i.toString();
+                var element = "ekapper" + stringi;
+                if (doc.data().Index == stringi){
+                    document.getElementById(element).innerHTML = Naam;
+                    document.getElementById(element).style.display = "block";    
+                }
+                i++;
             }
-            if (doc.data().Index == "2") {
-                document.getElementById("ekapper2").innerHTML = Naam;
-                document.getElementById("ekapper2").style.display = "block";  
-            }
-            if (doc.data().Index == "3") {
-                document.getElementById("ekapper3").innerHTML = Naam;
-                document.getElementById("ekapper3").style.display = "block";
-            }
-            if (doc.data().Index == "4") {
-                document.getElementById("ekapper4").innerHTML = Naam;
-                document.getElementById("ekapper4").style.display = "block";
-            }
-            if (doc.data().Index == "5") {
-                document.getElementById("ekapper5").innerHTML = Naam;
-                document.getElementById("ekapper5").style.display = "block";  
-            }
-            if (doc.data().Index == "6") {
-                document.getElementById("ekapper6").innerHTML = Naam;
-                document.getElementById("ekapper6").style.display = "block";
-            }
-            if (doc.data().Index == "7") {
-                document.getElementById("ekapper7").innerHTML = Naam;
-                document.getElementById("ekapper7").style.display = "block";
-            }
-            if (doc.data().Index == "8") {
-                document.getElementById("ekapper8").innerHTML = Naam;
-                document.getElementById("ekapper8").style.display = "block";  
-            }
-            if (doc.data().Index == "9") {
-                document.getElementById("ekapper9").innerHTML = Naam;
-                document.getElementById("ekapper9").style.display = "block";
-            }
-            if (doc.data().Index == "10") {
-                document.getElementById("ekapper10").innerHTML = Naam;
-                document.getElementById("ekapper10").style.display = "block";
-            }
-            if (doc.data().Index == "11") {
-                document.getElementById("ekapper11").innerHTML = Naam;
-                document.getElementById("ekapper11").style.display = "block";  
-            }
-            if (doc.data().Index == "12") {
-                document.getElementById("ekapper12").innerHTML = Naam;
-                document.getElementById("ekapper12").style.display = "block";
-            }
-            if (doc.data().Index == "13") {
-                document.getElementById("ekapper13").innerHTML = Naam;
-                document.getElementById("ekapper13").style.display = "block";
-            }
-            if (doc.data().Index == "14") {
-                document.getElementById("ekapper14").innerHTML = Naam;
-                document.getElementById("ekapper14").style.display = "block";  
-            }
-            if (doc.data().Index == "15") {
-                document.getElementById("ekapper15").innerHTML = Naam;
-                document.getElementById("ekapper15").style.display = "block";
-            }
-            if (doc.data().Index == "16") {
-                document.getElementById("ekapper16").innerHTML = Naam;
-                document.getElementById("ekapper16").style.display = "block";
-            }
-            if (doc.data().Index == "17") {
-                document.getElementById("ekapper17").innerHTML = Naam;
-                document.getElementById("ekapper17").style.display = "block";  
-            }
-            if (doc.data().Index == "18") {
-                document.getElementById("ekapper18").innerHTML = Naam;
-                document.getElementById("ekapper18").style.display = "block";
-            }
-           
         });
     })
     .catch(function(error) {

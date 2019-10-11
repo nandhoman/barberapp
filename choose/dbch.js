@@ -22,15 +22,18 @@ var Documentsign = getCookie("DocRef");
 
 var docRef = db.collection("buf1").doc(Documentsign);
 
+var pbarber;
+var amenu;
+var date;
 
 docRef.get().then(function(doc) {
     if (doc.exists) {
         var map = doc.data();
-        var date = map.date;
+        this.date = map.date;
         var dmenu = map.dmenu;
         var hmenu = map.hmenu;
         var kmenu = map.kmenu;
-        var pbarber = map.pbarber;
+        this.pbarber = map.pbarber;
 
         function allmenu(dmenu, hmenu, kmenu){
             if (dmenu > 0){
@@ -43,49 +46,11 @@ docRef.get().then(function(doc) {
                 return kmenu
             }
         }
-        var amenu = allmenu(dmenu, hmenu, kmenu);
-            function voorkeurskapperNamevar(pbarber){
-                if (pbarber == 0){
-                    return "Geen kapper geselecteerd" 
-                }
-                if (pbarber == 1){
-                    return "Sarah Hooi" 
-                }
-                if (pbarber == 2){
-                    return "Maura Hamers" 
-                }
-                if (pbarber == 3){
-                    return "Anthon Post" 
-                }
-                if (pbarber == 4){
-                    return "Daan Van Vliet" 
-                }
-                if (pbarber == 5){
-                    return "Quincy De Jong" 
-                }
-                if (pbarber == 6){
-                    return "Bor Den Breejen" 
-                }
-                if (pbarber == 7){
-                    return "Faris Abu Watfa" 
-                }
-                if (pbarber == 8){
-                    return "Obe Jansen" 
-                }
-                if (pbarber == 9){
-                    return "" 
-                }
-                if (pbarber == 10){
-                    return "" 
-                }
-                if (pbarber == 0){
-                    return "" 
-                }
 
-            }
-            var voorkeurskapperName = voorkeurskapperNamevar(pbarber);
+        this.amenu = allmenu(dmenu, hmenu, kmenu);
+        
         document.getElementById('Behandeling').innerHTML = "Behandeling: ";
-        document.getElementById('Kapper').innerHTML = "Kapper: " + voorkeurskapperName;
+        // document.getElementById('Kapper').innerHTML = "Kapper: " + voorkeurskapperName;
         document.getElementById('Duur').innerHTML = "Duur: "
         document.getElementById('Datum').innerHTML = "Datum: " + date;
 
@@ -102,3 +67,55 @@ function submit(){
     window.location.href = '/bevestigen';
 }
 
+var Naam;
+
+db.collection("Kappers")
+    .get()
+    .then(function(querySnapshot) {
+        querySnapshot.forEach(function(doc) {
+            // doc.data() is never undefined for query doc snapshots
+            this.Naam = doc.data().Name;
+            if (doc.data().Index == pbarber) {
+                document.getElementById("Kapper").innerHTML = "Kapper: " + Naam;
+            }
+        });
+    })
+    .catch(function(error) {
+        console.log("Error getting documents: ", error);
+    });
+
+    db.collection("Treatment")
+    .get()
+    .then(function(querySnapshot) {
+        querySnapshot.forEach(function(doc) {
+            // doc.data() is never undefined for query doc snapshots
+            var Naam = doc.data().Name;
+            function tijdinminuten(x){
+                return x * 10;
+            }
+            if (doc.data().Index == amenu && doc.data().Sort=="Men") {
+                document.getElementById("Behandeling").innerHTML = "Behandeling Heren - " + Naam;
+                document.getElementById("Duur").innerHTML = "Duur: " + tijdinminuten(doc.data().Duration) + " minuten";
+            }    
+            if (doc.data().Index == amenu && doc.data().Sort=="Women") {
+                document.getElementById("Behandeling").innerHTML = "Behandeling Dames - " + Naam;
+                document.getElementById("Duur").innerHTML = "Duur: " + tijdinminuten(doc.data().Duration) + " minuten";
+            }                                                                                                                               
+            if (doc.data().Index == amenu && doc.data().Sort=="Childs") {
+                document.getElementById("Behandeling").innerHTML = "Behandeling Kinderen - " + Naam;
+                document.getElementById("Duur").innerHTML = "Duur: " + tijdinminuten(doc.data().Duration) + " minuten";
+            }
+        });
+    })
+    .catch(function(error) {
+        console.log("Error getting documents: ", error);
+    });
+
+    // db.collection(Naam)
+    // .where(Index, "==", date)
+    // .get().then(function(querySnapshot) {
+    //     querySnapshot.forEach(function(doc) {
+    //         // doc.data() is never undefined for query doc snapshots
+    //         console.log(doc.id, " => ", doc.data());
+    //     });
+    // });
