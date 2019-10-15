@@ -23,3 +23,16 @@ damesInput.addEventListener("click", () => {
 kinderenInput.addEventListener("click", () => {
     kinderenselect.children[0].style.display = "block";
 });
+
+var htreatment = document.getElementById("dbheren").selectedIndex;
+
+var dtreatment = document.getElementById("dbdames").selectedIndex;
+
+var ktreatment = document.getElementById("dbkinderen").selectedIndex;
+console.log(htreatment);
+// if(htreatment == 21 || dtreatment == 21 || ktreatment == 21){
+//     console.log("Ja");
+//     kinderenselect.style.display = "none";
+//     damesselect.style.display = "none";
+//     herenselect.style.display = "none";
+// }

@@ -1,4 +1,7 @@
 var db = firebase.firestore();
+var KapperNaam;
+var DurationFromDatabase; 
+var typeSort;
 
 function getCookie(cname) {
     var name = cname + "=";
@@ -47,16 +50,26 @@ docRef.get().then(function(doc) {
             }
         }
 
+        function typemenu(dmenu, hmenu, kmenu){
+            if (dmenu > 0){
+                return "Men";
+            }
+            if (hmenu > 0){
+                return "Women";
+            }
+            if (kmenu > 0){
+                return "Childs";
+            }
+        }
+
         this.amenu = allmenu(dmenu, hmenu, kmenu);
+        this.typeSort = typemenu(dmenu, hmenu, kmenu);
         
         document.getElementById('Behandeling').innerHTML = "Behandeling: ";
-        // document.getElementById('Kapper').innerHTML = "Kapper: " + voorkeurskapperName;
         document.getElementById('Duur').innerHTML = "Duur: "
         document.getElementById('Datum').innerHTML = "Datum: " + date;
 
-        console.log(doc.data());
     } else {
-        // doc.data() will be undefined in this case
         console.log("No such document!");
     }
 }).catch(function(error) {
@@ -67,16 +80,16 @@ function submit(){
     window.location.href = '/bevestigen';
 }
 
-var Naam;
+
 
 db.collection("Kappers")
     .get()
     .then(function(querySnapshot) {
         querySnapshot.forEach(function(doc) {
-            // doc.data() is never undefined for query doc snapshots
-            this.Naam = doc.data().Name;
             if (doc.data().Index == pbarber) {
-                document.getElementById("Kapper").innerHTML = "Kapper: " + Naam;
+                this.KapperNaam = doc.data().Name;
+                document.getElementById("Kapper").innerHTML = "Kapper: " + KapperNaam;
+                tijdzoeken(KapperNaam);
             }
         });
     })
@@ -88,22 +101,24 @@ db.collection("Kappers")
     .get()
     .then(function(querySnapshot) {
         querySnapshot.forEach(function(doc) {
-            // doc.data() is never undefined for query doc snapshots
             var Naam = doc.data().Name;
             function tijdinminuten(x){
                 return x * 10;
             }
-            if (doc.data().Index == amenu && doc.data().Sort=="Men") {
+            if (doc.data().Index == amenu && doc.data().Sort == this.typeSort && this.typeSort == "Men") {
                 document.getElementById("Behandeling").innerHTML = "Behandeling Heren - " + Naam;
                 document.getElementById("Duur").innerHTML = "Duur: " + tijdinminuten(doc.data().Duration) + " minuten";
+                this.DurationFromDatabase = doc.data().Duration;
             }    
-            if (doc.data().Index == amenu && doc.data().Sort=="Women") {
+            if (doc.data().Index == amenu && this.typeSort == doc.data().Sort && this.typeSort == "Women") {
                 document.getElementById("Behandeling").innerHTML = "Behandeling Dames - " + Naam;
                 document.getElementById("Duur").innerHTML = "Duur: " + tijdinminuten(doc.data().Duration) + " minuten";
+                this.DurationFromDatabase = doc.data().Duration;
             }                                                                                                                               
-            if (doc.data().Index == amenu && doc.data().Sort=="Childs") {
+            if (doc.data().Index == amenu && this.typeSort == doc.data().Sort && this.typeSort == "Childs") {
                 document.getElementById("Behandeling").innerHTML = "Behandeling Kinderen - " + Naam;
                 document.getElementById("Duur").innerHTML = "Duur: " + tijdinminuten(doc.data().Duration) + " minuten";
+                this.DurationFromDatabase = doc.data().Duration;
             }
         });
     })
@@ -111,11 +126,61 @@ db.collection("Kappers")
         console.log("Error getting documents: ", error);
     });
 
-    // db.collection(Naam)
-    // .where(Index, "==", date)
-    // .get().then(function(querySnapshot) {
-    //     querySnapshot.forEach(function(doc) {
-    //         // doc.data() is never undefined for query doc snapshots
-    //         console.log(doc.id, " => ", doc.data());
-    //     });
-    // });
+    function zeroPad(num, places) {
+        return String(num).padStart(places, '0')
+    }
+
+    function blokZoeken(duration, doc){
+        var vrijblok = true;
+        var vrijeblokken = [];
+        var timeStampName2 = "";
+        var timeStampName = "";
+        var c = 0;
+        for (var x in doc.data()){
+            timeStampName = "b"+c;
+            var timeStampValuex = doc.data()[timeStampName];
+            if(timeStampValuex ==  "Free"){
+                vrijblok = true;
+                for(d = c + 1; d < (c + duration); d++){
+                    timeStampName2 = "b" + d;
+                    timeStampValue2 = doc.data()[timeStampName2];
+                    console.log(c,timeStampName2,timeStampValue2);
+                    if(timeStampValue2 != "Free"){
+                        c = d;
+                        vrijblok = false;
+                        d = c + duration;
+                    }
+                }
+            }
+            else{
+                vrijblok = false;
+            }
+            if(vrijblok == true){
+                vrijeblokken.push(timeStampName);
+            }
+            c = c + 1;
+        }
+        return vrijeblokken;
+    }
+
+    var DurationFromDatabaseNumber =  new Number(DurationFromDatabase);
+
+    function tijdzoeken(KapperNaam){
+        db.collection(KapperNaam)
+        .get()
+        .then(function(querySnapshot) {
+            querySnapshot.forEach(function(doc) {
+                var datumentity = doc.data().Date.seconds;
+                var datum = new Date(datumentity * 1000);
+                var DateYear = datum.getFullYear();
+                var DateMonth = zeroPad((datum.getMonth() + 1), 2);
+                var Dateday = zeroPad(datum.getDate(), 2);
+                var volledigeDatumUitRooster = DateYear + "-" + DateMonth + "-" + Dateday;
+                if(date == volledigeDatumUitRooster){
+                    var array = blokZoeken(this.DurationFromDatabase, doc);
+                    console.log(this.DurationFromDatabase);
+                    console.log(array);
+                } 
+            });
+        });
+    }
