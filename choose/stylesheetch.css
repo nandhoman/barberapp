@@ -28,7 +28,7 @@ h3 {
 .box{
     position: relative;
     width: 850px;
-    height: 600px;
+    height: 700px;
     margin: 50px auto;
     background: #F97070;
     border-radius: 80px;    
@@ -47,10 +47,10 @@ h3 {
     text-align: center;
     font-family: 'Montserrat', serif;
     font-weight: 800;
-    color: #FFFFFF;
     font-size: 40px;
     margin-left: 30px;
     margin-top: 35px;
+    color: #FFFFFF;
 }
 
 #maak_de_afspraak_compleet {
@@ -60,15 +60,31 @@ h3 {
     margin: auto;
     background: #1AE2A4;
     border-radius: 80px;  
-    top: -5px;
-    left: 40px;
+    top: 100px;
+    left: 70px;
     border: none;
     text-align: center;
     font-family: 'Montserrat', serif;
     font-weight: 800;
     color: #FFFFFF;
     font-size: 40px;
-    margin-left: 45px;
     margin-top: 150px;
 }
- 
+
+#left {
+    font-size: 80px;
+    color: #ffffff;
+    font-weight: 1000;
+    position: relative;
+    left: -700px;
+    top: 160px;
+}
+
+#right {
+    font-size: 80px;
+    color: #ffffff;
+    font-weight: 1000;
+    position: relative;
+    left: 720px;
+    top: -160px;
+}

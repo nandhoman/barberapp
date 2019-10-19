@@ -2,6 +2,9 @@ var db = firebase.firestore();
 var KapperNaam;
 var DurationFromDatabase; 
 var typeSort;
+var page = new Number(0);
+var array;
+
 
 function getCookie(cname) {
     var name = cname + "=";
@@ -28,42 +31,47 @@ var docRef = db.collection("buf1").doc(Documentsign);
 var pbarber;
 var amenu;
 var date;
+var dmenu;
+var hmenu;
+var kmenu;
+var choosetime;
 
 docRef.get().then(function(doc) {
     if (doc.exists) {
         var map = doc.data();
         this.date = map.date;
-        var dmenu = map.dmenu;
-        var hmenu = map.hmenu;
-        var kmenu = map.kmenu;
+        this.dmenu = map.dmenu;
+        this.hmenu = map.hmenu;
+        this.kmenu = map.kmenu;
         this.pbarber = map.pbarber;
 
         function allmenu(dmenu, hmenu, kmenu){
-            if (dmenu > 0){
+            if (this.dmenu > 0){
                 return dmenu;
             }
-            if (hmenu > 0){
+            if (this.hmenu > 0){
                 return hmenu;
             }
-            if (kmenu > 0){
+            if (this.kmenu > 0){
                 return kmenu
             }
         }
 
         function typemenu(dmenu, hmenu, kmenu){
             if (dmenu > 0){
-                return "Men";
+                return "Women";
             }
             if (hmenu > 0){
-                return "Women";
+                return "Men";
             }
             if (kmenu > 0){
                 return "Childs";
             }
         }
 
-        this.amenu = allmenu(dmenu, hmenu, kmenu);
-        this.typeSort = typemenu(dmenu, hmenu, kmenu);
+        this.amenu = allmenu(this.dmenu, this.hmenu, this.kmenu);
+        this.typeSort = typemenu(this.dmenu, this.hmenu, this.kmenu);
+        console.log(typeSort);
         
         document.getElementById('Behandeling').innerHTML = "Behandeling: ";
         document.getElementById('Duur').innerHTML = "Duur: "
@@ -105,6 +113,7 @@ db.collection("Kappers")
             function tijdinminuten(x){
                 return x * 10;
             }
+            // console.log(doc.data().Duration, doc.data().Name, doc.data().Sort, this.typeSort);
             if (doc.data().Index == amenu && doc.data().Sort == this.typeSort && this.typeSort == "Men") {
                 document.getElementById("Behandeling").innerHTML = "Behandeling Heren - " + Naam;
                 document.getElementById("Duur").innerHTML = "Duur: " + tijdinminuten(doc.data().Duration) + " minuten";
@@ -129,6 +138,7 @@ db.collection("Kappers")
     function zeroPad(num, places) {
         return String(num).padStart(places, '0')
     }
+
 
     function blokZoeken(duration, doc){
         var vrijblok = true;
@@ -165,6 +175,20 @@ db.collection("Kappers")
 
     var DurationFromDatabaseNumber =  new Number(DurationFromDatabase);
 
+    function toTime(block){
+        var txt = block;
+        var numb = txt.match(/\d/g);
+        numb = numb.join("");
+        numb = parseInt(numb, 10);
+        var hour = (numb / 6);
+        hour = Math.floor(hour);
+        var minutes = ((numb - (hour * 6))* 10);
+        minutes = zeroPad(minutes,  2);
+        hour = zeroPad(hour, 2);
+        return String(hour + ":" + minutes);
+    }
+    
+
     function tijdzoeken(KapperNaam){
         db.collection(KapperNaam)
         .get()
@@ -177,10 +201,84 @@ db.collection("Kappers")
                 var Dateday = zeroPad(datum.getDate(), 2);
                 var volledigeDatumUitRooster = DateYear + "-" + DateMonth + "-" + Dateday;
                 if(date == volledigeDatumUitRooster){
-                    var array = blokZoeken(this.DurationFromDatabase, doc);
-                    console.log(this.DurationFromDatabase);
-                    console.log(array);
+                    this.array = blokZoeken(this.DurationFromDatabase, doc);
+                    document.getElementById("100").innerHTML = toTime(array[((page * 9) + 0)]);
+                    document.getElementById("101").innerHTML = toTime(array[((page * 9) + 1)]);
+                    document.getElementById("102").innerHTML = toTime(array[((page * 9) + 2)]);
+                    document.getElementById("103").innerHTML = toTime(array[((page * 9) + 3)]);
+                    document.getElementById("104").innerHTML = toTime(array[((page * 9) + 4)]);
+                    document.getElementById("105").innerHTML = toTime(array[((page * 9) + 5)]);
+                    document.getElementById("106").innerHTML = toTime(array[((page * 9) + 6)]);
+                    document.getElementById("107").innerHTML = toTime(array[((page * 9) + 7)]);
+                    document.getElementById("108").innerHTML = toTime(array[((page * 9) + 8)]);
                 } 
             });
         });
-    }
+}
+
+setTimeout(function(){
+    window.choosebttn = function(element){
+        var choose = document.getElementById(element).innerHTML;
+        document.cookie = "last=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        document.cookie = "last="+choose+"; path=/;";
+        console.log(choose);
+        colorRed();
+    }; 
+    
+    function colorRed(){  
+        for(z = 100; z < 109; z++){
+            var element = getCookie("last");
+            var elementInnerHTML = document.getElementById(z).innerHTML;
+            if(element == elementInnerHTML){
+                console.log(true, element);
+                document.getElementById(z).style.color = "#F97070";
+            }
+            else{
+                document.getElementById(z).style.color = "#FFFFFF";
+            }
+        }
+    } 
+},500); 
+
+function getTimeFromCoockie(){
+    this.choosetime = getCookie("last");
+}
+
+function getBlockFromTime(time){
+    var elements = time.split(":");
+    var hour = elements[0];
+    var minutess = elements[1];
+    console.log(hour, minutess);
+    var hourblocks = (hour * 6);
+    var minutessblocks = (minutess / 10);
+    var blocks = hourblocks + minutessblocks;
+    return blocks;
+}
+
+function ContinueButton(){
+    var docRef2;
+    getTimeFromCoockie();
+    var blockss = getBlockFromTime(choosetime);
+    db.collection("buf2").add({
+        date: date,
+        dmenu: dmenu,
+        hmenu: hmenu,
+        kmenu: kmenu,
+        pbarber: pbarber,
+        choosetime: choosetime,
+        startblock: blockss,
+        Duration: DurationFromDatabase,
+        oldDocRef: Documentsign,
+    })
+    .then(function(docRef) {
+        console.log("Document written with ID: ", docRef.id);
+        this.docRef2 = docRef.id;
+        
+    })
+    .catch(function(error) {
+        console.error("Error adding document: ", error);
+    }); 
+    document.cookie = "username=John Doe; expires=Thu, 18 Dec 2013 12:00:00 UTC";
+    window.location.href = '/bevestigen';
+}
+
