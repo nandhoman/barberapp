@@ -1,0 +1,63 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Kies een tijdstip</title>
+  <meta name="description" content="HU-project">
+  <meta name="author" content="Nand Homan">
+  <link rel="stylesheet" href="stylesheetch.css">
+</head> 
+
+<body>
+    <h1>Kies een tijdstip</h1>
+    <h3 id="Behandeling"></h3>
+    <h3 id="Kapper"></h3>
+    <h3 id="Duur"></h3>
+    <h3 id="Datum"></h3>
+    <div class="box">
+      <tr>
+        <th><button class="button" id="100" onclick="choosebttn(100)"></button></th>
+        <th><button class="button" id="101" onclick="choosebttn(101)"></button></th>
+        <th><button class="button" id="102" onclick="choosebttn(102)"></button></th>
+      </tr>
+      <tr>
+          <th><button class="button" id="103" onclick="choosebttn(103)"></button></th>
+          <th><button class="button" id="104" onclick="choosebttn(104)"></button></th>
+          <th><button class="button" id="105" onclick="choosebttn(105)"></button></th>
+      </tr>
+      <tr>
+          <th><button class="button" id="106" onclick="choosebttn(106)"></button></th>
+          <th><button class="button" id="107" onclick="choosebttn(107)"></button></th>
+          <th><button class="button" id="108" onclick="choosebttn(108)"></button></th>
+      </tr>
+      <button id="maak_de_afspraak_compleet" onclick="ContinueButton()">Maak je afspraak compleet</button>
+    </div>
+    <script src="mainch.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-analytics.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyB7iZaRp9HM3jYQZV7ATQJgu2z5jqBg7Zg",
+        authDomain: "kapperreserveringsapp.firebaseapp.com",
+        databaseURL: "https://kapperreserveringsapp.firebaseio.com",
+        projectId: "kapperreserveringsapp",
+        storageBucket: "",
+        messagingSenderId: "744732095062",
+        appId: "1:744732095062:web:dd11acbd7f956a76ea01f7",
+        measurementId: "G-JYHYX0YF9K"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+    </script>
+    <script src="dbch.js"></script> 
+</body>
+</html>

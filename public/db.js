@@ -2,10 +2,6 @@
 var db = firebase.firestore();
 
 function getValue(docRef) {
-    document.cookie = "last=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-    
-    document.cookie = "DocRef=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-
     var htreatment = document.getElementById("dbheren").selectedIndex;
 
     var dtreatment = document.getElementById("dbdames").selectedIndex;

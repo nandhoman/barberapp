@@ -1,13 +1,13 @@
 /* here starts the custompart of the css */
 body {
     background-color: #008CFF;
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
+    
 }
 
 h1 {
     text-align: center;
-    text-align-last: center;
     font-family: 'Montserrat', serif;
     font-style: ExtraBold;
     color: #FFFFFF;
@@ -22,7 +22,6 @@ h1 {
     margin: 100px auto;
     background: #1AE2A4;
     border-radius: 80px;    
-    user-select: none;
 }
 
 
@@ -47,7 +46,7 @@ h1 {
 #Naam {
     position: relative;
     top: 50px;
-    left: -15px;
+    left: 0px;
     font-family: 'Montserrat', serif;
     width: 750px;
     height: 90px;
@@ -59,7 +58,6 @@ h1 {
     text-align:center;
     z-index: 1;
     font-weight: 800;
-    user-select: none;
 }
 
 #Mail {
@@ -77,19 +75,18 @@ h1 {
     text-align:center;
     font-weight: 800;
     z-index: 1;
-    user-select: none;
 }
 
 #letter {
     position: relative;
-    top: 53px;
+    top: 60px;
     left: 80px;
     z-index: 2;
 }
 
 #mailicon {
     position: relative;
-    top: -75px;
+    top: -70px;
     left: 80px;
     z-index: 2;
 }
@@ -121,3 +118,7 @@ h1 {
     opacity: 0;
 }
 
+#main{
+    position: relative;
+    left: 200px;
+}

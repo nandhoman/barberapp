@@ -1,0 +1,93 @@
+<!--0.02-->
+<!DOCTYPE html>
+<html lang="nl">
+    <head>        
+        <link rel="stylesheet" href="/cms/style.css">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
+        <meta charset="utf-8">
+        <title>Maak behandelingen aan</title>
+    </head>
+    <body>
+        <div id="main">
+            <h1>Tijdelijke CMS</h1>
+            <h2>Voer een behandeling in:</h2>
+            <form id="form">
+                <h3>1. Valt onder:</h3>
+                <select id="valtOnder">
+                    <option>Heren</option>
+                    <option>Dames</option>
+                    <option>Kinderen</option>
+                </select>
+                <h3>2. Geef de naam van de behandeling op:</h3>
+                <input  id="name" type = "text">
+                <h3>3. Tijd die nodig is voor de behandeling:</h3>
+                <p>Tijd in stappen van 10 minuten bijv: 10:00</p>
+                <input type = "text" id="time">
+                <h3>4. Selecteer bevoegde medewerkers:</h3>
+                <div id="checkboxes"> 
+                    <label class="container">&nbsp;&nbsp;&nbsp;&nbsp;Sarah Hooi
+                        <input type="checkbox" id="cbx" name="Sarah Hooi">
+                        <span class = "checkmark"></span>
+                    </label>
+                    <br>
+                    <label class="container"> &nbsp;&nbsp;&nbsp;&nbsp;Maura Hamers
+                            <input type="checkbox" id="cbx" name="Maura Hamers">
+                            <span class = "checkmark"></span>
+                    </label>
+                    <br>
+                    <label class="container">&nbsp;&nbsp;&nbsp;&nbsp;Anthon Post
+                        <input type="checkbox" id="cbx" name="Anthon Post">
+                        <span class = "checkmark"></span>
+                    </label>
+                    <br>
+                    <label class="container">&nbsp;&nbsp;&nbsp;&nbsp;Quincy De Jong
+                            <input type="checkbox" id="cbx" name="Quincy De Jong">
+                            <span class = "checkmark"></span>
+                    </label>
+                    <br>
+                    <label class="container">&nbsp;&nbsp;&nbsp;&nbsp;Bor Den Breejen
+                        <input type="checkbox" id="cbx" name="Bor Den Breejen">
+                        <span class = "checkmark"></span>
+                    </label>
+                    <br>
+                    <label class="container">&nbsp;&nbsp;&nbsp;&nbsp;Faris Abu Watfa
+                            <input type="checkbox" id="cbx" name="Faris Abu Watfa">
+                            <span class = "checkmark"></span>
+                    </label>
+                    <br>
+                    <label class="container">&nbsp;&nbsp;&nbsp;&nbsp;Obe Jansen
+                        <input type="checkbox" id="cbx" name="Obe Jansen">
+                        <span class = "checkmark"></span>
+                    </label>
+                    <br>
+                    <button id="opslaan" onclick="submit()">Opslaan</button>
+                </div>
+            </form>
+        </div>
+        <script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-app.js"></script>
+
+        <!-- TODO: Add SDKs for Firebase products that you want to use
+             https://firebase.google.com/docs/web/setup#available-libraries -->
+        <script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-firestore.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-analytics.js"></script>
+
+        <script>
+          // Your web app's Firebase configuration
+          var firebaseConfig = {
+            apiKey: "AIzaSyB7iZaRp9HM3jYQZV7ATQJgu2z5jqBg7Zg",
+            authDomain: "kapperreserveringsapp.firebaseapp.com",
+            databaseURL: "https://kapperreserveringsapp.firebaseio.com",
+            projectId: "kapperreserveringsapp",
+            storageBucket: "",
+            messagingSenderId: "744732095062",
+            appId: "1:744732095062:web:dd11acbd7f956a76ea01f7",
+            measurementId: "G-JYHYX0YF9K"
+          };
+          // Initialize Firebase
+          firebase.initializeApp(firebaseConfig);
+          firebase.analytics();
+        </script>
+        <script src="/cms/db.js"></script>
+    </body>
+
+</html>

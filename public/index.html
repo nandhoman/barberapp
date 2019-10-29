@@ -6,7 +6,6 @@
     <link rel="stylesheet" href="main.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,800,800i,900,900i&display=swap"
         rel="stylesheet">
-    <script src="https://kit.fontawesome.com/23540dcef6.js" crossorigin="anonymous"></script>
     <meta charset="utf-8">
     <title>Maak een afspraak</title>
 </head>
@@ -15,10 +14,10 @@
     <h1>Maak een afspraak</h1>
     <div class="box">
         <div class="treatment">
-            <i class="fas fa-cut fa-3x icon1"></i>
-            <a href="#" id="heren1"><i class="fas fa-male fa-4x icon2"></i></a> 
-            <a href="#" id="dames1"><i class="fas fa-female fa-4x icon3"></i></a> 
-            <a href="#" id="kinderen1"><i class="fas fa-child fa-4x icon4"></i></a> 
+            <img src="icons/barber%20new.png" class="icon1">
+            <input type="image" src="/icons/specialist-user.png" class="icon2" id="heren1" alt="heren" />
+            <input type="image" src="/icons/woman-avatar.png" class="icon3" id="dames1" alt="dames">
+            <input type="image" src="/icons/kids-couple.png" class="icon4" id="kinderen1" alt="kinderen">
 
             <div id="herenselect">
                 <select id="dbheren">
@@ -112,19 +111,19 @@
                     <option id=ekapper7></option>
                     <option id=ekapper8></option>
                 </select>
-                <i class="fas fa-user-check fa-3x icon9"></i>
-                
+                <img src="icons/person%20new.png" class="icon9">
+                <img src="icons/left-arrow.png" class="icon6">
             </div>
         </div>
         <div class="date_and_timebar">
-            <i class="fas fa-calendar-day fa-3x icon8"></i>
+            <img src="icons/calendar%20new.png" class="icon8">
             <input type="date" id="datepicker" required pattern="\d{4}-\d{2}-\d{2}">
             <img src="icons/left-arrow.png" class="icon7">
         </div>
 
         <button onclick="getValue()" id="zoek_naar_mogelijkheden">Zoek naar mogelijkheden</button>
     </div>
-    <br>
+
     <script src="main.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-app.js"></script>
 

@@ -244,7 +244,6 @@ function getTimeFromCoockie(){
     this.choosetime = getCookie("last");
 }
 
-
 function getBlockFromTime(time){
     var elements = time.split(":");
     var hour = elements[0];
@@ -257,6 +256,7 @@ function getBlockFromTime(time){
 }
 
 function ContinueButton(){
+    var docRef2;
     getTimeFromCoockie();
     var blockss = getBlockFromTime(choosetime);
     db.collection("buf2").add({
@@ -272,13 +272,13 @@ function ContinueButton(){
     })
     .then(function(docRef) {
         console.log("Document written with ID: ", docRef.id);
-        setTimeout(function() {
-            location.href = "/bevestigen";
-        }, 1000);        
+        this.docRef2 = docRef.id;
+        
     })
     .catch(function(error) {
         console.error("Error adding document: ", error);
     }); 
-
+    document.cookie = "username=John Doe; expires=Thu, 18 Dec 2013 12:00:00 UTC";
+    window.location.href = '/bevestigen';
 }
 

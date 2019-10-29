@@ -23,16 +23,17 @@ p {
     margin-left: 80px;
     margin-right: 80px;
     color: #FFFFFF;
-    font-size: 50px;
+    font-size: 20px;
     margin-top: 150px;
 }
 
 #button{
+        position: relative;
+        margin-left: 30%;
         margin-top: 100px;
         width: 400px;
         height: 110px;
         background: #F97070;
-        margin-bottom: 40px;
         border-radius: 80px;  
         border: none;
         text-align: center;

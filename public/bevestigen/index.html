@@ -5,26 +5,32 @@
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
         <meta charset="utf-8">
         <title>Bevestig je afspraak</title>
-        <script src="https://kit.fontawesome.com/23540dcef6.js" crossorigin="anonymous"></script>
     </head>
     <body>
+        <div id="main">
         <h1>Maak je afspraak<br>compleet</h1>
             <div id="box">
                 <div id="naambox">
-                    <i class="fas fa-user-edit fa-3x" id="letter"></i>
+                    <img src="/icons/Icon simple-letterboxd@2x.png" id="letter">
                     <input type="text" id="Naam" placeholder="Naam">
                     <h2 id="naamdisplay">Naam</h2>
                 </div>
                 <div id="mailbox">
-                    <i class="far fa-envelope fa-3x" id="mailicon"></i>
+                    <img src="/icons/Icon simple-email@2x.png" id="mailicon">
                     <input type="text" id="Mail" placeholder="Mail">
                     <h2 id="maildisplay">Mail</h2>
                 </div>
                 <button onclick="submit()" id="submit">Reserveer</button>
             </div>
+        </div>
+        <!-- <script src="main.js"></script>       -->
         <script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-app.js"></script>
+
+        <!-- TODO: Add SDKs for Firebase products that you want to use
+             https://firebase.google.com/docs/web/setup#available-libraries -->
         <script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-firestore.js"></script>
         <script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-analytics.js"></script>
+
         <script>
           // Your web app's Firebase configuration
           var firebaseConfig = {

@@ -136,41 +136,28 @@ h1 {
 .icon1 {
     position: relative;
     left: 24px;
-    top: 7px;
+    top: 15px;
 }
 
 
 .icon2 {
     position: relative;
-    top: 10px;
-    left: 240px;
-    color: #000000;
-}
-
-.icon2:hover{
-    color: #008CFF; 
+    top: -8px;
+    left: 200px;
+  
 }
 
 .icon3 {
     position: relative;
-    top: 10px;
-    left: 275px;
-    color: #000000;
-}
-
-.icon3:hover{
-    color: #008CFF; 
+    top: -8px;
+    left: 215px;
+    
 }
 
 .icon4 {
     position: relative;
-    top: 10px;
-    left: 300px; 
-    color: #000000;   
-}
-
-.icon4:hover{
-    color: #008CFF; 
+    top: -8px;
+    left: 230px;    
 }
 
 .icon5 {
@@ -205,14 +192,14 @@ h1 {
 
 .icon8 {
     position: relative;
-    top: 15px;
-    left: 30px;     
+    top: 5px;
+    left: 15px;     
 }
 
 .icon9 {
     position: relative;
-    top: -70px;
-    left: -315px;
+    top: -90px;
+    left: -290px;
 }
 
 p {
@@ -235,7 +222,7 @@ p {
 
 #herenselect select {
     position: relative;
-    top: -62px;
+    top: -82px;
     left: 50%px;
     font-family: 'Montserrat', serif;
     width: 750px;
@@ -252,7 +239,7 @@ p {
 
 #damesselect select {
     position: relative;
-    top: -62px;
+    top: -82px;
     left: 50%px;
     font-family: 'Montserrat', serif;
     width: 750px;
@@ -268,7 +255,7 @@ p {
 }
 #kinderenselect select {
     position: relative;
-    top: -62px;
+    top: -82px;
     left: 50%px;
     font-family: 'Montserrat', serif;
     width: 750px;
@@ -315,8 +302,8 @@ p {
 #datepicker {
     height: 85px;
     position: relative;
-    top: 3px;
-    left: 65px;
+    top: -28px;
+    left: 30px;
     width: 590px;
     font-size: 45px;
     font-family: 'Montserrat', serif;
@@ -369,7 +356,6 @@ p {
     font-weight: 800;
     text-align-last: center;
 }
-
 
 select::-ms-expand {
     display: none;
