@@ -1,0 +1,154 @@
+<!--0.02-->
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <link rel="stylesheet" href="main.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,800,800i,900,900i&display=swap"
+        rel="stylesheet">
+    <meta charset="utf-8">
+    <title>Maak een afspraak</title>
+</head>
+
+<body>
+    <h1>Maak een afspraak</h1>
+    <div class="box">
+        <div class="treatment">
+            <img src="icons/barber%20new.png" class="icon1">
+            <input type="image" src="/icons/specialist-user.png" class="icon2" id="heren1" alt="heren" />
+            <input type="image" src="/icons/woman-avatar.png" class="icon3" id="dames1" alt="dames">
+            <input type="image" src="/icons/kids-couple.png" class="icon4" id="kinderen1" alt="kinderen">
+
+            <div id="herenselect">
+                <select id="dbheren">
+                    <option value="100" selected disabled>Heren</option>
+                    <option id="e101"></option>
+                    <option id="e102"></option>
+                    <option id="e103"></option>
+                    <option id="e104"></option>
+                    <option id="e105"></option>
+                    <option id="e106"></option>
+                    <option id="e107"></option>
+                    <option id="e108"></option>
+                    <option id="e109"></option>
+                    <option id="e110"></option>
+                    <option id="e111"></option>
+                    <option id="e112"></option>
+                    <option id="e113"></option>
+                    <option id="e114"></option>
+                    <option id="e115"></option>
+                    <option id="e116"></option>
+                    <option id="e117"></option>
+                    <option id="e118"></option>
+                    <option id="e119"></option>
+                    <option id="e120"></option>
+                    <option id="gaterug">Ga terug</option>
+                </select>
+            </div>
+            <div id="damesselect">
+                <select id="dbdames">
+                    <option value="200" selected disabled>Dames</option>
+                    <option id="e201"></option>
+                    <option id="e202"></option>
+                    <option id="e203"></option>
+                    <option id="e204"></option>
+                    <option id="e205"></option>
+                    <option id="e206"></option>
+                    <option id="e207"></option>
+                    <option id="e208"></option>
+                    <option id="e209"></option>
+                    <option id="e210"></option>
+                    <option id="e211"></option>
+                    <option id="e212"></option>
+                    <option id="e213"></option>
+                    <option id="e214"></option>
+                    <option id="e215"></option>
+                    <option id="e216"></option>
+                    <option id="e217"></option>
+                    <option id="e218"></option>
+                    <option id="e219"></option>
+                    <option id="e220"></option>
+                    <option id="gaterug">Ga terug</option>
+                </select>
+            </div>
+            <div id="kinderenselect">
+                <select id="dbkinderen">
+                    <option value="300" selected disabled>Kinderen</option>
+                    <option id="e301"></option>
+                    <option id="e302"></option>
+                    <option id="e303"></option>
+                    <option id="e304"></option>
+                    <option id="e305"></option>
+                    <option id="e306"></option>
+                    <option id="e307"></option>
+                    <option id="e308"></option>
+                    <option id="e309"></option>
+                    <option id="e310"></option>
+                    <option id="e311"></option>
+                    <option id="e312"></option>
+                    <option id="e313"></option>
+                    <option id="e314"></option>
+                    <option id="e315"></option>
+                    <option id="e316"></option>
+                    <option id="e317"></option>
+                    <option id="e318"></option>
+                    <option id="e319"></option>
+                    <option id="e320"></option>
+                    <option id="gaterug">Ga terug</option>
+                </select>
+            </div>
+        </div>
+        <div class="preferencebarber">
+            <div id="voorkeurskapper">
+                <select id="voorkeurskapper1">
+                    <option id=ekapper0 selected disabled>Voorkeurskapper</option>
+                    <option id=ekapper1></option>
+                    <option id=ekapper2></option>
+                    <option id=ekapper3></option>
+                    <option id=ekapper4></option>
+                    <option id=ekapper5></option>
+                    <option id=ekapper6></option>
+                    <option id=ekapper7></option>
+                    <option id=ekapper8></option>
+                </select>
+                <img src="icons/person%20new.png" class="icon9">
+                <img src="icons/left-arrow.png" class="icon6">
+            </div>
+        </div>
+        <div class="date_and_timebar">
+            <img src="icons/calendar%20new.png" class="icon8">
+            <input type="date" id="datepicker" required pattern="\d{4}-\d{2}-\d{2}">
+            <img src="icons/left-arrow.png" class="icon7">
+        </div>
+
+        <button onclick="getValue()" id="zoek_naar_mogelijkheden">Zoek naar mogelijkheden</button>
+    </div>
+
+    <script src="main.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+             https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-analytics.js"></script>
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyB7iZaRp9HM3jYQZV7ATQJgu2z5jqBg7Zg",
+            authDomain: "kapperreserveringsapp.firebaseapp.com",
+            databaseURL: "https://kapperreserveringsapp.firebaseio.com",
+            projectId: "kapperreserveringsapp",
+            storageBucket: "",
+            messagingSenderId: "744732095062",
+            appId: "1:744732095062:web:dd11acbd7f956a76ea01f7",
+            measurementId: "G-JYHYX0YF9K"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+    </script>
+    <script src="db.js"></script>
+</body>
+
+</html>

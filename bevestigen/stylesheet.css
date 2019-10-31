@@ -1,0 +1,123 @@
+/* here starts the custompart of the css */
+body {
+    background-color: #008CFF;
+    margin: 0px;
+    padding: 0px;
+}
+
+h1 {
+    text-align: center;
+    text-align-last: center;
+    font-family: 'Montserrat', serif;
+    font-style: ExtraBold;
+    color: #FFFFFF;
+    font-size: 100px;
+    margin-top: 150px;   
+}
+
+#box {
+    position: relative;
+    width: 850px;
+    height: 550px;
+    margin: 100px auto;
+    background: #1AE2A4;
+    border-radius: 80px;    
+    user-select: none;
+}
+
+
+
+#submit    {
+    position: relative;
+    width: 750px;
+    height: 90px;
+    margin: auto;
+    background: #F97070;
+    border-radius: 80px;  
+    top: -130px;
+    left: 55px;
+    border: none;
+    text-align: center;
+    font-family: 'Montserrat', serif;
+    font-weight: 800;
+    color: #FFFFFF;
+    font-size: 40px;
+}
+
+#Naam {
+    position: relative;
+    top: 50px;
+    left: -15px;
+    font-family: 'Montserrat', serif;
+    width: 750px;
+    height: 90px;
+    border-radius: 80px;
+    font-size: 40px;
+    display: initial;
+    border-color: #ffffff;
+    text-align-last: center;
+    text-align:center;
+    z-index: 1;
+    font-weight: 800;
+    user-select: none;
+}
+
+#Mail {
+    position: relative;
+    top: -80px;
+    left: 0px;
+    font-family: 'Montserrat', serif;
+    width: 750px;
+    height: 90px;
+    border-radius: 80px;
+    font-size: 40px;
+    display: initial;
+    border-color: #ffffff;
+    text-align-last: center;
+    text-align:center;
+    font-weight: 800;
+    z-index: 1;
+    user-select: none;
+}
+
+#letter {
+    position: relative;
+    top: 53px;
+    left: 80px;
+    z-index: 2;
+}
+
+#mailicon {
+    position: relative;
+    top: -75px;
+    left: 80px;
+    z-index: 2;
+}
+
+#naamdisplay{
+    text-align: left;
+    font-family: 'Montserrat', serif;
+    font-style: ExtraBold;
+    color: #9B9B9B;
+    font-size: 60px;
+    position: relative;
+    top: -85px;
+    left: 320px;
+    z-index: 2;
+    display: block;
+    opacity: 0;
+}
+
+#maildisplay{
+    text-align: left;
+    font-family: 'Montserrat', serif;
+    font-style: ExtraBold;
+    color: #9B9B9B;
+    font-size: 60px;
+    position: relative;
+    top: -215px;
+    left: 340px;
+    z-index: 2;
+    opacity: 0;
+}
+

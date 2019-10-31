@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="nl">
+    <head>        
+        <link rel="stylesheet" href="/bevestigen/stylesheet.css">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
+        <meta charset="utf-8">
+        <title>Bevestig je afspraak</title>
+    </head>
+    <body>
+        <div id="main">
+        <h1>Maak je afspraak<br>compleet</h1>
+            <div id="box">
+                <div id="naambox">
+                    <img src="/icons/Icon simple-letterboxd@2x.png" id="letter">
+                    <input type="text" id="Naam" placeholder="Naam">
+                    <h2 id="naamdisplay">Naam</h2>
+                </div>
+                <div id="mailbox">
+                    <img src="/icons/Icon simple-email@2x.png" id="mailicon">
+                    <input type="text" id="Mail" placeholder="Mail">
+                    <h2 id="maildisplay">Mail</h2>
+                </div>
+                <button onclick="submit()" id="submit">Reserveer</button>
+            </div>
+        </div>
+        <!-- <script src="main.js"></script>       -->
+        <script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-app.js"></script>
+
+        <!-- TODO: Add SDKs for Firebase products that you want to use
+             https://firebase.google.com/docs/web/setup#available-libraries -->
+        <script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-firestore.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-analytics.js"></script>
+
+        <script>
+          // Your web app's Firebase configuration
+          var firebaseConfig = {
+            apiKey: "AIzaSyB7iZaRp9HM3jYQZV7ATQJgu2z5jqBg7Zg",
+            authDomain: "kapperreserveringsapp.firebaseapp.com",
+            databaseURL: "https://kapperreserveringsapp.firebaseio.com",
+            projectId: "kapperreserveringsapp",
+            storageBucket: "",
+            messagingSenderId: "744732095062",
+            appId: "1:744732095062:web:dd11acbd7f956a76ea01f7",
+            measurementId: "G-JYHYX0YF9K"
+          };
+          // Initialize Firebase
+          firebase.initializeApp(firebaseConfig);
+          firebase.analytics();
+        </script>
+        <script src="db.js"></script>
+    </body>
+
+</html>
