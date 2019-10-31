@@ -1,4 +1,3 @@
-// Reference messages collection
 var db = firebase.firestore();
 
 function getValue(docRef) {
