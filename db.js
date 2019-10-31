@@ -1,4 +1,4 @@
-// dit is de nieuwe versie
+// dit is de nieuwe versie11
 var db = firebase.firestore();
 
 function getValue(docRef) {
